@@ -1,0 +1,34 @@
+<h2 style="font-weight:900px">Products</h2>
+<table class="table table-bordered"  >
+  <tr style="background-color: bisque;">
+    <th>No</th>
+    <th>Name</th>
+    <th>MRP</th>
+    <th>Price</th>
+    <th>Image</th>
+    <th>Description</th>
+    <th>Category</th>
+    <th>Available</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let uvw of result ; let i = index">
+    <td>{{i + 1}}</td>
+    <td>{{uvw.name}}</td>
+    <td>{{uvw.MRP | currency:'INR'}}</td>
+    <td>{{uvw.Price | currency:'INR' }}</td>
+    <td><img src="{{uvw.avatar}}" height="130px"></td>
+    <td>{{uvw.Description}}</td>
+    <td>{{uvw.category}}</td>
+    <td>{{uvw.IsValid}}</td>
+
+    <td><button class="btn btn-sm btn-danger btn-outline-danger " (click)="delete(uvw.id)">Delete</button>
+    <button class="btn btn-sm btn-primary btn-outline-primary" routerLink="/admin/addItems/{{uvw.id}}">Edit</button></td>
+  </tr>
+</table>
+
+<div class="gototop js-top">
+  <a href="#" class="js-gotop"><i class="ion-ios-arrow-up"></i></a>
+</div>
+<hr>
+
+

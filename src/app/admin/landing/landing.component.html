@@ -1,0 +1,19 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 border">
+      <ul style="list-style: none;">
+        <li class="font-weight-bold"><a routerLink="/admin/dashboard">DashBoard </a> <br> </li> <br>
+        <li class="font-weight-bold"><a routerLink="/admin/products">Products </a> <br> </li> <br>
+        <li class="font-weight-bold"><a routerLink="/admin/addItems">Add Product </a> <br> </li> <br>
+        <li class="font-weight-bold"><a routerLink="/admin/orders">Orders </a> <br> </li>
+        <br>
+        <button  class="btn btn-danger" (click)="logout()" >Logout</button>
+
+      </ul>
+    </div>
+    <div class="col-lg-9">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

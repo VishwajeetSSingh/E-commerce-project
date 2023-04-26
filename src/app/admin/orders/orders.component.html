@@ -1,0 +1,42 @@
+<h2>All orders</h2>
+<div class="jumbotron" style="background-color: rgb(237, 224, 224);">
+<table class=" table table-striped" >
+  <tr style="color: rgb(255, 253, 253); background-color:rgb(85, 51, 51);">
+    <th>Customer Details</th>
+    <th>Product Details</th>
+    <th>Payment Status</th>
+    <th>Order Status</th>
+  </tr>
+
+    <tr *ngFor="let pro of result" style="color: rgb(0, 0, 0);">
+      <td>
+        <ul style="list-style-type: none; " >
+          <li class="h5">{{pro.name}}</li>
+          <li>{{pro.address}}</li>
+          <li>{{pro.email}}</li>
+          <li>{{pro.mobno}}</li>
+        </ul>
+      </td>
+
+      <td >
+        <ul *ngFor="let duts of pro.products">
+          <li style="list-style-type: none;"><img src="{{duts.avatar}}" height="70px" width="70px"></li>
+          <li >{{duts.name}}</li>
+          <li >{{duts.Price | currency:"INR"}}</li>
+          <li>{{duts.quantity}}</li>
+        </ul>
+      </td>
+
+      <td>
+        <ul>
+          {{pro.status}}
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <button class="rounded btn btn-warning">Dispatched</button>
+        </ul>
+      </td>
+    </tr>
+</table>
+</div>

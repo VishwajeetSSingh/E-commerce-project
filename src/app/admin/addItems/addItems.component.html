@@ -1,0 +1,31 @@
+<h2>Add Products</h2>
+<form [formGroup]="information" (ngSubmit)="Save(information.value)">
+  Name : <span *ngIf="information.controls.name.touched && information.controls.name.invalid" class="text-danger small">Entr Name</span>
+  <input type="text" name="name" formControlName="name" class="form-control shadow p-3 mb-5 bg-body rounded"> <br>
+
+
+  MRP : <span *ngIf="information.controls.MRP.touched && information.controls.MRP.invalid" class="text-danger small">Entr MRP</span>
+  <input type="number" name="MRP" formControlName="MRP" class="form-control shadow p-3 mb-5 bg-body rounded"> <br>
+
+  Price : <span *ngIf="information.controls.Price.touched && information.controls.Price.invalid" class="text-danger small"> Entr Price</span>
+  <input type="number" name="Price" formControlName="Price" class="form-control shadow p-3 mb-5 bg-body rounded"> <br>
+
+
+  Image : <span *ngIf="information.controls.Image.touched && information.controls.Image.invalid" class="text-danger small"> Display Image</span>
+  <input type="text" name="Image" formControlName="Image" class="form-control shadow p-3 mb-5 bg-body rounded"> <br>
+
+
+  Description : <span *ngIf="information.controls.Description.touched && information.controls.Description.invalid" class="text-danger small"> Entr Description</span>
+  <input type="text" name="Description" formControlName="Description" class="form-control shadow p-3 mb-5 bg-body rounded"> <br>
+  Category :
+  Men :
+  <input type="radio" formControlName="category" value="men">
+  Women :
+  <input type="radio" formControlName="category" value="women">
+
+  IsValid:
+  <input type="checkbox" checked formControlName="IsValid"><br>
+  <button type="submit" class="btn btn-success mt-2" [disabled]="!information.valid ||information.controls.Price.value > information.controls.MRP.value">Save</button>
+  </form>
+
+

@@ -1,0 +1,19 @@
+<div class="colorlib-product" >
+  <div class="container">
+    <div class="row row-pb-md">
+      <div class="col-lg-3 mb-4 text-center" *ngFor="let info of formdata">
+        <div class="product-entry border">
+          <a routerLink="/product/{{info.id}}" class="prod-img">
+            <img (click)="scrollToTop()" src="{{info.avatar}}" class="img-fluid" alt="Free html5 bootstrap 4 template">
+          </a>
+          <div class="desc">
+            <h2><a href="#" >{{info.name}}</a></h2>
+            <span class="mrp">{{info.MRP | currency:"INR"}}</span>
+            <span class="price">{{info.Price | currency:"INR"}}</span>
+            <span class="Description">{{info.Description}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
